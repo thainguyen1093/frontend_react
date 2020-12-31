@@ -1,6 +1,6 @@
 # project Name
 
-- hulahood_front-end
+- front-end
 
 ### Start Date Dec 29 2020
 
