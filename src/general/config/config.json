@@ -1,0 +1,21 @@
+{
+  "backEnd": {
+    "domain": "localhost",
+    "port": 8080
+  },
+  "path": {
+    "prefix": "",
+    "auth": {
+      "login": "/api/login",
+      "logout": "/logout"
+    },
+    "user": "/user"
+  },
+  "allowMethod": [
+    "POST",
+    "PUT",
+    "GET",
+    "DELETE"
+  ],
+  "allowConsoleLog": true
+}
