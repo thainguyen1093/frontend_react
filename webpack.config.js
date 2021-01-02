@@ -5,7 +5,12 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: __dirname + '/dir',
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: '/'
+  },
+  devServer: {
+    port: 3000,
+    historyApiFallback: true
   },
   devtool: "source-map",
   module: {
@@ -33,10 +38,6 @@ module.exports = {
         ]
       }
     ]
-  },
-  devServer: {
-    inline:true,
-    port: 3000
   },
   plugins: [
     new HtmlWebPackPlugin({
