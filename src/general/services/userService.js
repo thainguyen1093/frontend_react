@@ -11,21 +11,21 @@ function getUserURL() {
 }
 
 export function search(data) {
-  api.search(getUserURL(), data);
+  return api.search(getUserURL(), data);
 }
 
 export function getById(id) {
-  api.getById(getUserURL(), id);
+  return api.getById(getUserURL(), id);
 }
 
 export function create(data) {
-  api.create(getUserURL(), data);
+  return api.create(getUserURL(), data);
 }
 
 export function update(id, data) {
-  api.update(getUserURL(), id, data);
+  return api.update(getUserURL(), id, data);
 }
 
 export function deleteById(id) {
-  api.deleteById(getUserURL(), id);
+  return api.deleteById(getUserURL(), id);
 }

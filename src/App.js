@@ -1,10 +1,10 @@
 import React from 'react';
-import RootRouter from "./redux/components/RootRouter";
+import {RootLayout} from "./redux/components";
 import {BrowserRouter} from "react-router-dom";
 
 const App = () => (
     <BrowserRouter>
-      <RootRouter/>
+      <RootLayout/>
     </BrowserRouter>
 )
 

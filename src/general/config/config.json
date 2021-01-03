@@ -1,6 +1,6 @@
 {
   "backEnd": {
-    "domain": "localhost",
+    "domain": "http://localhost",
     "port": 8080
   },
   "path": {

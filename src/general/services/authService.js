@@ -20,7 +20,7 @@ function getLogoutPath() {
   return config.path.auth.logout;
 }
 
-export function getLogoutPath() {
+export function getLogoutURL() {
   return configService.getFullURL(getLogoutPath());
 }
 
