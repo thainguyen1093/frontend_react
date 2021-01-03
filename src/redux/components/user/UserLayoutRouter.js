@@ -13,7 +13,7 @@ const UserLayoutRouter = () => {
         <Route path={`${path}/:id`}>
           <User/>
         </Route>
-        <Route exact path={path}>
+        <Route path={path}>
           <Redirect to={`${path}/dashboard`}/>
         </Route>
       </Switch>
