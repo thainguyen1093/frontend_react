@@ -4,6 +4,8 @@ import {
   USER_CREATE_STATUS
 } from "../../constants/ActionTypes";
 import {apiStatus} from "../../constants/apiStatus";
+
+import {consoleLogService} from "../../../general/services"
 import {userService} from "../../../general/services";
 
 export const userCreateChangeUserName = username => ({
@@ -39,11 +41,11 @@ export const create = () => (dispatch, getState) => {
 
   return userService.create(userCreate)
   .then(response => {
-    console.log("success");
+    consoleLogService.log("success");
     dispatch(userCreateSuccess(response))
   })
   .catch(error => {
-    console.error(error);
+    consoleLogService.error(error);
     dispatch(userCreateFail(error))
   });
 }
