@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 
-// import {UserCreate} from "../../components";
 import UserCreate from "../../components/user/UserCreate";
 
 import {userCreateChangeUserName, userCreateChangePassword, create} from "../../actions/user/userCreate";
