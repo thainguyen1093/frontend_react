@@ -1,0 +1,31 @@
+import React from 'react';
+import {Redirect, Route, Switch, useRouteMatch} from "react-router-dom";
+import Login from "./Login";
+import Logout from "./Logout";
+import Register from "./Register";
+import ForgotPassword from "./ForgotPassword";
+
+const NewLayoutRouter = () => {
+  let {path, url} = useRouteMatch();
+  return (
+      <Switch>
+        <Route path={`${path}/login`}>
+          <Login/>
+        </Route>
+        <Route path={`${path}/register`}>
+          <Register/>
+        </Route>
+        <Route path={`${path}/forgot-password`}>
+          <ForgotPassword/>
+        </Route>
+        <Route path={`${path}/logout`}>
+          <Logout/>
+        </Route>
+        <Route path={`${path}`}>
+          <Redirect to={`${path}/login`}/>
+        </Route>
+      </Switch>
+  );
+}
+
+export default NewLayoutRouter;
