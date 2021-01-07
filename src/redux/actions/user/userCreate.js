@@ -7,6 +7,7 @@ import {apiStatus} from "../../constants/apiStatus";
 
 import {consoleLogService} from "../../../general/services"
 import {userService} from "../../../general/services";
+import {toast} from "react-toastify";
 
 export const userCreateChangeUserName = username => ({
   type: USER_CREATE_CHANGE_USERNAME,
@@ -42,10 +43,12 @@ export const create = () => (dispatch, getState) => {
   return userService.create(userCreate)
   .then(response => {
     consoleLogService.log("success");
+    toast.success("User Created Success");
     dispatch(userCreateSuccess(response))
   })
   .catch(error => {
     consoleLogService.error(error);
+    toast.error("User Created Fail");
     dispatch(userCreateFail(error))
   });
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import {Redirect, Route, Switch, useRouteMatch} from "react-router-dom";
 import Login from "./Login";
 import Logout from "./Logout";
-import Register from "./Register";
 import ForgotPassword from "./ForgotPassword";
+import RegisterContainer from "../../containers/new/RegisterContainer";
 
 const NewLayoutRouter = () => {
   let {path, url} = useRouteMatch();
@@ -13,7 +13,7 @@ const NewLayoutRouter = () => {
           <Login/>
         </Route>
         <Route path={`${path}/register`}>
-          <Register/>
+          <RegisterContainer/>
         </Route>
         <Route path={`${path}/forgot-password`}>
           <ForgotPassword/>

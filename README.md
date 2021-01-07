@@ -16,6 +16,7 @@
 + [react-redux](https://www.npmjs.com/package/react-redux)
 + [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 + [Font Awesome](https://fontawesome.com/) (Free)
++ [React Toastify](https://fkhadra.github.io/react-toastify/introduction) (Free)
 
 #### Set up project
 

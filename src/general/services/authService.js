@@ -8,6 +8,8 @@ import {setUser, remove} from "./common/localStorage";
 import * as api from "../api/api";
 import {methods} from "../constant/method";
 
+import { toast } from 'react-toastify';
+
 function getLoginPath() {
   return config.path.auth.login;
 }
@@ -29,9 +31,13 @@ export function login(data) {
   .then((response) => {
     if (response.data.accessToken) {
       setUser(response.data);
+      toast.success("Login success");
     }
 
     return response.data;
+  })
+  .catch(error => {
+    toast.error("Login fail");
   });
 }
 

@@ -10,26 +10,35 @@ import {
   InputGroupAddon,
   InputGroupText,
   Label,
-  Row
+  Row, Spinner
 } from "reactstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {apiStatus} from "../../constants/apiStatus";
 
-const Register = () => {
+const Register = ({userCreateStatus, userCreate, changeUsername, changePassword, create}) => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const {username, password} = userCreate;
+  const {status} = userCreateStatus;
 
   return (
       <Container className="my-5">
+
         <Row className="justify-content-center">
           <Col sm={4}>
-            <h1 className="text-primary">Register your User</h1>
+
+            {status == apiStatus.LOADING
+                ? <Spinner color="primary"/>
+                : <h1 className="text-primary">Register your User</h1>}
             <Form>
 
               <FormGroup>
-                <Input type="text" placeholder="Enter your Username"/>
+                <Input type="text" placeholder="Enter your Username" onChange={changeUsername} value={username}/>
               </FormGroup>
               <FormGroup>
                 <InputGroup>
-                  <Input type={showPassword ? "text" : "password"} id="password" placeholder="Enter your Password"/>
+                  <Input type={showPassword ? "text" : "password"} placeholder="Enter your Password"
+                         onChange={changePassword} value={password}/>
                   <InputGroupAddon addonType="append">
                     <Button outline color="info" onClick={() => setShowPassword(!showPassword)}>
                       <FontAwesomeIcon icon={showPassword ? "eye" : "eye-slash"}/>
@@ -46,7 +55,7 @@ const Register = () => {
                 </Input>
               </FormGroup>
 
-              <Button color="primary">Create</Button>
+              <Button color="primary" onClick={create}>Create</Button>
 
             </Form>
           </Col>
